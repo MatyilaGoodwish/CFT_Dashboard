@@ -3,12 +3,28 @@ function init(e){
 
 let dashboardProps = kendo.observable({
     profile:{
-        ID: "99089890809",
+        ID: "0",
         Names:"",
         Surname: "",
         Phone:"",
         Email:"",
-        Joined: "",
+        Update: function(){
+          function dataSynchronizationProfile(){
+            return firebase.auth().onAuthStateChanged(function(user){
+              if(user){
+                  firebase.firestore().collection("Members").doc(user.uid).set({
+                    ID: dashboardProps.get("profile.ID"),
+                    Names:dashboardProps.get("profile.Names"),
+                    Surname:dashboardProps.get("profile.Surname"),
+                    Phone:dashboardProps.get("profile.Phone"),
+                    Email: user.email
+                  }) 
+              }
+            })
+          }
+          dataSynchronizationProfile();
+          kendo.alert("Profile Updated");
+        }
     },
     user:{
         signout: function(){
@@ -24,18 +40,27 @@ let dashboardProps = kendo.observable({
   })
 
   
+  var userProfileStored = kendo.observable({
+      activeMembers: []
+  });
 
   function dataSynchronization(){
      firebase.auth().onAuthStateChanged(function(user){
         if(user){
            let userDefined =   firebase.firestore()
-            .collection("test").get()
+            .collection("Members").get()
            userDefined.then(function(snapshot){
              snapshot.forEach(client=>{
 
-              
+               userProfileStored.get("activeMembers").slice([]);
 
-                console.log(client.data())
+               userProfileStored.get("activeMembers").push(client.data());
+               
+                console.log(userProfileStored.get("activeMembers"));
+                
+               
+             
+
              });
             userDefined.catch(function(error){
               kendo.alert("kindly check your internet connectivity or speed");
@@ -44,6 +69,28 @@ let dashboardProps = kendo.observable({
         }
     })
 }
+
+(function(){
+  firebase.auth().onAuthStateChanged(function(user){
+    if(user){
+      let customer =  firebase.firestore().collection("Members").doc(user.uid).get();
+      customer.then(function(myprofile){
+        let {ID , Email, Phone, Names, Surname } = myprofile.data();
+        console.log( ID );
+          dashboardProps.set("profile.ID", ID);
+          dashboardProps.set("profile.Email", Email );
+          dashboardProps.set("profile.Names", Names);
+          dashboardProps.set("profile.Surname", Surname);
+          dashboardProps.set("profile.Phone", Surname);
+      });
+
+      customer.catch(function(error){
+        kendo.confirm("Kindly complete your CFT Profile")
+      })
+   
+    }
+  })
+}())
 
 dataSynchronization();
 
@@ -55,15 +102,6 @@ dataSynchronization();
 
 
 
-  function dataSynchronizationProfile(){
-    return firebase.auth().onAuthStateChanged(function(user){
-      if(user){
-          firebase.firestore().collection("test").add({
-            test: "query"
-          }) 
-      }
-    })
-  }
 
    
   
@@ -77,10 +115,7 @@ dataSynchronization();
       }
   })
 
-  let dashboardDataSource = new kendo.data.DataSource({
-    data: []
-  });
-
+ 
   kendo.bind(document.body, dashboardProps);
 
   let Layout = new kendo.Layout("ui-layout");
@@ -97,12 +132,22 @@ dataSynchronization();
   })
   Router.route("/profile", (queryStrings)=>{
     Layout.showIn("#content", new kendo.View("profile", { model: dashboardProps }));
+
   })
   Router.route("/downloads", (queryStrings)=>{
     Layout.showIn("#content", new kendo.View("downloads", {model: dashboardProps}));
   })
   Router.route("/members", (queryStrings)=>{ 
     Layout.showIn("#content", new kendo.View("members", {model: dashboardProps}));
+
+    $("#members-registered").kendoGrid({
+      dataSource: userProfileStored.activeMembers,
+      sortable: true,
+      pageSize: 5,
+      filterable: true
+    });
+
+    userProfileStored.sync();
 
   })
 

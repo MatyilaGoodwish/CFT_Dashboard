@@ -72,14 +72,14 @@
                 <div class="col-md-6">
                     <div class="form-group">
                 
-                        <p class="lead">Last Name</p>
+                        <p class="lead">Full Names</p>
                         <input type="text" class="form-control" required data-bind="value: profile.Names" />
 
                         <p class="lead">Last Name</p>
                         <input type="text" class="form-control" required data-bind="value: profile.Surname" />
 
                         <p class="lead">ID Number</p>
-                        <input type="number" class="form-control" required data-bind="value: profile.ID" />
+                        <input type="text" class="form-control" required data-bind="value: profile.ID" />
 
                         <p class="lead">Phone Number</p>
                         <input type="text" class="form-control" required data-bind="value: profile.Phone" />
@@ -130,7 +130,9 @@
     </script>
 
     <script id="members" type="text/x-kendo-template">
-        <div class="container shadow">
+        <div class="container  p-2">
+                <h3 class="display-4">Community Members</h3>
+                <p>List of all registered members changing the world through CFT</p>
             <div class="row">
                 <div class="col-md-12">
                      <div data-role="grid" id="members-registered"></div>
