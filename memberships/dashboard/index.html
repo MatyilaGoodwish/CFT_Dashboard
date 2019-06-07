@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>{{title}}</title>
+    <title>CFT Membership Area</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.1/firebase.js"></script>
     <script src="../security/auth.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -36,13 +36,16 @@
 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item active">
-            <a class="nav-link text-light" href="#">Home <span class="sr-only"></span></a>
+            <a class="nav-link text-light" href="#"><i class="fa fa-home"></i> Home <span class="sr-only"></span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="#/profile">My Profile</a>
+            <a class="nav-link text-light" href="#/profile"><i class="fa fa-user"></i> My Profile</a>
           </li>
           <li class="nav-item">
-               <a class="nav-link text-light" href="#/members">Active Members</a>
+                <a class="nav-link text-light" href="#/downloads"><i class="fa fa-download"></i> Downloads</a>
+              </li>
+          <li class="nav-item">
+               <a class="nav-link text-light" href="#/members"><i class="fa fa-group"></i> Active Members</a>
              </li>
         </ul>
      
@@ -51,7 +54,7 @@
                         <a class="nav-link text-light text-right" href="#/members/active" data-bind="text: profile.Email"></a>
                 </li>
                 <li class="nav-item text-center " style="position: relative;right:0px!important;">
-                        <a class="btn text-light text-right bg-danger p-1" href="#/signout" data-bind="click: user.signout"> Logout </a>
+                        <a class="btn text-light text-right bg-danger p-1" href="#/signout" data-bind="click: user.signout"><i class="fa fa-sign-out"></i>  Logout </a>
                 </li>
         </ul>
       </div>
@@ -131,6 +134,16 @@
             <div class="row">
                 <div class="col-md-12">
                      <div data-role="grid" id="members-registered"></div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script id="downloads" type="text/x-kendo-template">
+        <div class="container shadow">
+            <div class="row">
+                <div class="col-md-12">
+                     <h5 class="display-4">Downloads</h5>
                 </div>
             </div>
         </div>

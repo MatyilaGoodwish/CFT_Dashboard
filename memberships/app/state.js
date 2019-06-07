@@ -10,14 +10,68 @@ let dashboardProps = kendo.observable({
         Email:"",
         Joined: "",
     },
+    user:{
+        signout: function(){
+            firebase.auth().signOut();
+            setTimeout(function(){
+                location.replace('index.html');
+            }, 3000);
+        }
+    },
     copyright: {
       information: `${new Date().getFullYear() } - RTE IT Systems, Version 1.0.0 - All rights reserved`
     }
   })
+
+  
+
+  function dataSynchronization(){
+     firebase.auth().onAuthStateChanged(function(user){
+        if(user){
+           let userDefined =   firebase.firestore()
+            .collection("test").get()
+           userDefined.then(function(snapshot){
+             snapshot.forEach(client=>{
+
+              
+
+                console.log(client.data())
+             });
+            userDefined.catch(function(error){
+              kendo.alert("kindly check your internet connectivity or speed");
+            })
+           })
+        }
+    })
+}
+
+dataSynchronization();
+
+
+
+
+  
+
+
+
+
+  function dataSynchronizationProfile(){
+    return firebase.auth().onAuthStateChanged(function(user){
+      if(user){
+          firebase.firestore().collection("test").add({
+            test: "query"
+          }) 
+      }
+    })
+  }
+
+   
   
   firebase.auth().onAuthStateChanged(function(user){
       if(user){
-        dashboardProps.set("profile.Email", user.email)
+        dashboardProps.set("profile.Email", user.email);
+
+ 
       }else{
           location.replace("../index.html");
       }
@@ -44,19 +98,15 @@ let dashboardProps = kendo.observable({
   Router.route("/profile", (queryStrings)=>{
     Layout.showIn("#content", new kendo.View("profile", { model: dashboardProps }));
   })
-  Router.route("/statements", (queryStrings)=>{
-    
+  Router.route("/downloads", (queryStrings)=>{
+    Layout.showIn("#content", new kendo.View("downloads", {model: dashboardProps}));
   })
   Router.route("/members", (queryStrings)=>{ 
     Layout.showIn("#content", new kendo.View("members", {model: dashboardProps}));
 
-
-    
-
   })
 
   Router.start();
- 
 }
 
 $(document).ready(init.bind(this)); 
