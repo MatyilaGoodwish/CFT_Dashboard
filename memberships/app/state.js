@@ -6,17 +6,33 @@
 
 function init(e){
 
-  //we create a data source
+let dashboardProps = kendo.observable({
+    profile:{
+        idnumber: "99089890809",
+        firstname:"",
+        lastname: "",
+        phone:"",
+        email:"",
+        joined: "",
+    },
+    copyright: {
+      information: `${new Date().getFullYear() } - RTE IT Systems, Version 1.0.0 - All rights reserved`
+    }
+  })
+  
+  firebase.auth().onAuthStateChanged(function(user){
+      if(user){
+        
+      }else{
+          location.replace("../index.html");
+      }
+  })
+
   let dashboardDataSource = new kendo.data.DataSource({
     data: []
   });
 
-  //we create an observer
-  let dashboardProps = kendo.observable({
-    copyright: {
-      information: `${new Date().getFullYear() }  All rights reserved`
-    }
-  })
+  
 
   //we bound the dashboard the the state management code
   kendo.bind(document.body, dashboardProps);

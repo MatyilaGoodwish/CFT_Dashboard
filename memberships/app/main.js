@@ -23,6 +23,7 @@ angular.module("cft-app", [])
             let currentState = new ServiceAccount().checkState();
             firebase.auth().createUserWithEmailAndPassword(email,password)
             .then(success=>{
+                location.replace("./dashboard/index.html");
                 $("#notification").html("<br/><br/><div class='alert alert-success'> We taking you to dashboard</div>");
             })
             .catch(error=>{
@@ -38,6 +39,7 @@ angular.module("cft-app", [])
             //this is the auth responsible for the api auth
             firebase.auth().signInWithEmailAndPassword(email,password)
             .then(success=>{
+                location.replace("./dashboard/index.html");
                 $("#notification").html(`<br/><br/><div class='alert alert-success'> You are signed in</div>`);
             })
             .catch(error=>{
@@ -55,21 +57,11 @@ angular.module("cft-app", [])
     app.email = "";
     app.password = "";
     app.login = function(){
-
-       //storing a localstorage object to the browser for Ux reasons but for production this we delete
-        localStorage.setItem("loginCredentials", JSON.stringify({
-            email: app.email,
-            password: btoa(app.password)
-        }));
         new ServiceAccount().attemptLogin(app.email, app.password);
     }
     app.reg_email = "";
     app.reg_password = "";
     app.register = function(){
-        localStorage.setItem("registerCredentials", JSON.stringify({
-            email: app.email,
-            password: btoa(app.password)
-        }));
         new ServiceAccount().attemptRegistration(app.reg_email, app.reg_password);
     }
 })
