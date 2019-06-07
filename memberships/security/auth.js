@@ -10,4 +10,7 @@
     appId: "1:739797598132:web:9453a3051586dd50"
   };
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+  firebase.initializeApp(firebaseConfig); //init api pass the config which is the storage , domain, bucket and messanging
+
+
+//this is the project core linked with google cloud (GCP)
