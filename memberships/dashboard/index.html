@@ -13,12 +13,12 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <!-- we dont change these -->
     <link rel="stylesheet" href="../styles/kendo.common.min.css">
-    <link rel="stylesheet" href="../styles/kendo.material.min.css">
+    <link rel="stylesheet" href="../styles/kendo.default.min.css">
      <!-- we dont change these -->
 
     <script src="../js/jquery.min.js"></script>
   <!--  <script src="../app/dashboard.js"></script> -->
-    <script src="../app/state.js"></script>
+    <script src="../app/state.min.js"></script>
 
 </head>
 <body>
@@ -82,7 +82,7 @@
                         <input type="text" class="form-control" required data-bind="value: profile.ID" />
 
                         <p class="lead">Phone Number</p>
-                        <input type="text" class="form-control" required data-bind="value: profile.Phone" />
+                        <input type="number" class="form-control" required data-bind="value: profile.Phone" />
                         
                         <p class="lead">Member Email</p>
                         <input type="email" readonly class="form-control" required data-bind="value: profile.Email" />
@@ -142,7 +142,7 @@
     </script>
 
     <script id="downloads" type="text/x-kendo-template">
-        <div class="container shadow">
+        <div class="container p-2">
             <div class="row">
                 <div class="col-md-12">
                      <h5 class="display-4">Downloads</h5>
@@ -153,7 +153,7 @@
 
 
     <script id="ui-layout" type="text/x-kendo-template">
-        <div id="content"></div>
+        <div id="content" class="my-4"></div>
     </script>
 
 
