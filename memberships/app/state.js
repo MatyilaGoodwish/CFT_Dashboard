@@ -1,19 +1,14 @@
 'use strict';
-
-//i know i deleted everything
-
-//we write the init function
-
 function init(e){
 
 let dashboardProps = kendo.observable({
     profile:{
-        idnumber: "99089890809",
-        firstname:"",
-        lastname: "",
-        phone:"",
-        email:"",
-        joined: "",
+        ID: "99089890809",
+        Names:"",
+        Surname: "",
+        Phone:"",
+        Email:"",
+        Joined: "",
     },
     copyright: {
       information: `${new Date().getFullYear() } - RTE IT Systems, Version 1.0.0 - All rights reserved`
@@ -22,7 +17,7 @@ let dashboardProps = kendo.observable({
   
   firebase.auth().onAuthStateChanged(function(user){
       if(user){
-        
+        dashboardProps.set("profile.Email", user.email)
       }else{
           location.replace("../index.html");
       }
@@ -32,48 +27,36 @@ let dashboardProps = kendo.observable({
     data: []
   });
 
-  
-
-  //we bound the dashboard the the state management code
   kendo.bind(document.body, dashboardProps);
 
-  //secondly we create the layout that will be rendered on the view on the root
-  let Layout = new kendo.Layout("ui-layout");//we need this on the page as ref
-
-
-
-  //we create views here
-  //lets render a componet as an example hope you ready
-  let moduleExcelSpreadSheet = new kendo.View(`
-      <div id="cft-editor" data-role="spreadsheet"></div>
-    `);
-
-  //init will start route definitions
+  let Layout = new kendo.Layout("ui-layout");
+ 
   let Router = new kendo.Router({
     init: function(){
-      //starts the router calls on demand
-      Layout.render("#root"); //we are showing the layout to shadow dom
+      Layout.render("#root");
     }
   })
 
   
   Router.route("/", (queryStrings)=>{
-    Layout.showIn("#content", new kendo.View("welcome"));
+    Layout.showIn("#content", new kendo.View("welcome", { model: dashboardProps }));
   })
   Router.route("/profile", (queryStrings)=>{
-    Layout.showIn("#content", new kendo.View("profile"));
+    Layout.showIn("#content", new kendo.View("profile", { model: dashboardProps }));
   })
   Router.route("/statements", (queryStrings)=>{
-    //console.log("you are navigating root index");
+    
   })
-  Router.route("/members", (queryStrings)=>{
-    //console.log("you are navigating root index");
+  Router.route("/members", (queryStrings)=>{ 
+    Layout.showIn("#content", new kendo.View("members", {model: dashboardProps}));
+
+
+    
+
   })
 
+  Router.start();
  
-
-  Router.start(); //we start the router here we still need to add routes
-  //the first route will call layout and display it on the page.
 }
 
-$(document).ready(init.bind(this)); //this way
+$(document).ready(init.bind(this)); 

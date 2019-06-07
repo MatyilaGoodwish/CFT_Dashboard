@@ -10,10 +10,10 @@
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
     <script src="../security/auth.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <!-- we dont change these -->
     <link rel="stylesheet" href="../styles/kendo.common.min.css">
-    <link rel="stylesheet" href="../styles/kendo.office365.min.css">
+    <link rel="stylesheet" href="../styles/kendo.material.min.css">
      <!-- we dont change these -->
 
     <script src="../js/jquery.min.js"></script>
@@ -42,14 +42,16 @@
             <a class="nav-link text-light" href="#/profile">My Profile</a>
           </li>
           <li class="nav-item">
-               <a class="nav-link text-light" href="#/members/active">Active Members</a>
+               <a class="nav-link text-light" href="#/members">Active Members</a>
              </li>
-   
         </ul>
      
         <ul class="navbar-nav">
                 <li class="nav-item text-center " style="position: relative;right:0px!important;">
-                        <a class="nav-link text-light text-right" href="#/members/active" data-bind="text: profile.userEmail"></a>
+                        <a class="nav-link text-light text-right" href="#/members/active" data-bind="text: profile.Email"></a>
+                </li>
+                <li class="nav-item text-center " style="position: relative;right:0px!important;">
+                        <a class="btn text-light text-right bg-danger p-1" href="#/signout" data-bind="click: user.signout"> Logout </a>
                 </li>
         </ul>
       </div>
@@ -68,18 +70,22 @@
                     <div class="form-group">
                 
                         <p class="lead">Last Name</p>
-                        <input type="text" class="form-control" required data-bind="value: profile.firstname" />
+                        <input type="text" class="form-control" required data-bind="value: profile.Names" />
 
                         <p class="lead">Last Name</p>
-                        <input type="text" class="form-control" required data-bind="value: profile.lastname" />
+                        <input type="text" class="form-control" required data-bind="value: profile.Surname" />
 
                         <p class="lead">ID Number</p>
-                        <input type="number" class="form-control" required data-bind="value: profile.idnumber" />
+                        <input type="number" class="form-control" required data-bind="value: profile.ID" />
 
                         <p class="lead">Phone Number</p>
-                        <input type="text" class="form-control" required data-bind="value: profile.phone" />
+                        <input type="text" class="form-control" required data-bind="value: profile.Phone" />
+                        
+                        <p class="lead">Member Email</p>
+                        <input type="email" readonly class="form-control" required data-bind="value: profile.Email" />
+                      
                         <hr>
-                        <input type="button" value="Update" data-bind="click: profile.update" />
+                        <input type="button" value="Update" data-bind="click: profile.Update" />
                     </div>
                 </div>
             </div>
@@ -87,17 +93,49 @@
     </script>
 
     <script id="welcome" type="text/x-kendo-template">
-        <div class="container shadow">
+        <div class="container container-fluid p-2">
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
                        <h3 class="display-3">Welcome</h3>
-                       <p>Community functionary team welcomes you...</p>
+                       
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 text-center">
+                    <img src="../icons/information.png" width="100%" />
+                    <button class="btn btn-block btn-warning">Information</button>
+                </div>
+                <div class="col-md-3 text-center">
+                        <img src="../icons/events.png" width="100%">
+                        <button class="btn btn-block btn-warning">Community Activities</button>
+                </div>
+               
+                <div class="col-md-3 text-center">
+                        <img src="../icons/support.png" width="100%">
+                        <button class="btn btn-block btn-warning">Support</button>
+                </div>
+
+                <div class="col-md-3 text-center shadow p-2">
+                        <h3>Appointment</h3>
+                            <div data-role="calendar"></div>
+                        <button class="btn btn-default">Book Now</button>
                 </div>
             </div>
         </div>
     </script>
+
+    <script id="members" type="text/x-kendo-template">
+        <div class="container shadow">
+            <div class="row">
+                <div class="col-md-12">
+                     <div data-role="grid" id="members-registered"></div>
+                </div>
+            </div>
+        </div>
+    </script>
+
 
     <script id="ui-layout" type="text/x-kendo-template">
         <div id="content"></div>
