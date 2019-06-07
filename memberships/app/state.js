@@ -14,7 +14,7 @@ function init(e){
   //we create an observer
   let dashboardProps = kendo.observable({
     copyright: {
-      information: `${new Date().getFullYear() }  CFT - All rights reserved`
+      information: `${new Date().getFullYear() }  All rights reserved`
     }
   })
 
@@ -40,18 +40,21 @@ function init(e){
     }
   })
 
-  //first route for root to id the first stackpath
-
+  
   Router.route("/", (queryStrings)=>{
-    console.log("you are navigating root index");
+    Layout.showIn("#content", new kendo.View("welcome"));
+  })
+  Router.route("/profile", (queryStrings)=>{
+    Layout.showIn("#content", new kendo.View("profile"));
+  })
+  Router.route("/statements", (queryStrings)=>{
+    //console.log("you are navigating root index");
+  })
+  Router.route("/members", (queryStrings)=>{
+    //console.log("you are navigating root index");
   })
 
-  //you will copy and paste routes and change paths
-  Router.route("/editor", (queryStrings)=>{
-    console.log("this is a spreadsheet");
-    Layout.showIn("#full-content-width",moduleExcelSpreadSheet )
-  })
-
+ 
 
   Router.start(); //we start the router here we still need to add routes
   //the first route will call layout and display it on the page.

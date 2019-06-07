@@ -23,7 +23,9 @@
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-dark text-light">
-   <a class="navbar-brand" href="#">logo goes here</a>
+   <a class="navbar-brand" href="/">
+        <img src="../branding/CFT/Logo.svg" width="150" />
+   </a>
    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
      <span class="navbar-toggler-icon"></span>
    </button>
@@ -31,14 +33,14 @@
    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
        <li class="nav-item active">
-         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+         <a class="nav-link text-light" href="#">Home <span class="sr-only"></span></a>
        </li>
        <li class="nav-item">
-         <a class="nav-link" href="#/editor">Office Online</a>
+         <a class="nav-link text-light" href="#/profile">My Profile</a>
        </li>
        <li class="nav-item">
-         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-       </li>
+            <a class="nav-link text-light" href="#/members/active">Active Members</a>
+          </li>
      </ul>
      <form class="form-inline my-2 my-lg-0">
        <input class="form-control mr-sm-2" type="search" placeholder="Search">
@@ -48,20 +50,46 @@
  </nav>
 
 
-    <div id="root" style="width:100%!important"></div>
+    <div id="root" class="mt-4"></div>
 
 
+    <script id="profile" type="text/x-kendo-template">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <p class="lead">First Name</p>
+                        <input type="text" class="form-control" required />
 
+                        <hr>
+                        <input type="button" value="Update" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script id="welcome" type="text/x-kendo-template">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                       <h3 class="display-3">Welcome</h3>
+                       <p>Community functionary team members</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
 
     <script id="ui-layout" type="text/x-kendo-template">
         <div id="content"></div>
-        <div id="full-content-width" style="width:100%!important;"></div>
     </script>
 
 
 
 
-    <div class="footer-copyright-area p-2">
+    <div class="footer-copyright-area p-2 fixed-bottom">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
