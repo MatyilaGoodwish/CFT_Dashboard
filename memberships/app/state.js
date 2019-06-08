@@ -1,6 +1,5 @@
 'use strict';
 function init(e){
-
 let dashboardProps = kendo.observable({
     profile:{
         ID: "0",
@@ -19,13 +18,12 @@ let dashboardProps = kendo.observable({
                     Phone:dashboardProps.get("profile.Phone"),
                     Email: user.email
                   })
-                  
                   .catch(function(error){
                     kendo.confirm("Kindly check your fields again");
                   });
 
                   setTimeout(function(){
-                    location.replace("./index.html");
+                    location.replace("./index.php");
                   },3000);
               }
             })
@@ -38,12 +36,12 @@ let dashboardProps = kendo.observable({
         signout: function(){
             firebase.auth().signOut();
             setTimeout(function(){
-                location.replace('index.html');
+                location.replace('../index.php');
             }, 3000);
         }
     },
     copyright: {
-      information: `${new Date().getFullYear() } - RTE IT Systems, Version 1.0.0 - All rights reserved`
+      information: `${new Date().getFullYear() } - Powered by RTE`
     }
   })
 
@@ -99,7 +97,7 @@ dataSynchronization();
       if(user){
         dashboardProps.set("profile.Email", user.email);
       }else{
-          location.replace("../index.html");
+          location.replace("../index.php");
       }
   })
 

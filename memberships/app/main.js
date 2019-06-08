@@ -1,7 +1,7 @@
 /**
  * @author RTE
  * @copyright 2019
- * @license RTE Group SA
+ * @license RTE Group SA  
  */
 angular.module("cft-app", [])
 .controller("cft-controller", function($scope, $http){
@@ -23,7 +23,7 @@ angular.module("cft-app", [])
             let currentState = new ServiceAccount().checkState();
             firebase.auth().createUserWithEmailAndPassword(email,password)
             .then(success=>{
-                location.replace("./dashboard/index.html");
+                location.replace("./dashboard/index.php");
                 $("#notification").html("<br/><br/><div class='alert alert-success'> We taking you to dashboard</div>");
             })
             .catch(error=>{
@@ -39,19 +39,18 @@ angular.module("cft-app", [])
             //this is the auth responsible for the api auth
             firebase.auth().signInWithEmailAndPassword(email,password)
             .then(success=>{
-                location.replace("./dashboard/index.html");
+                location.replace("./dashboard/index.php");
                 $("#notification").html(`<br/><br/><div class='alert alert-success'> You are signed in</div>`);
             })
             .catch(error=>{
                 console.log(error)
-                $("#notification").html(`<br/><br/><div class='alert alert-success'> ${ error.message }</div>`);
+                $("#notification").html(`<br/><br/><div class='alert alert-danger'> ${ error.message }</div>`);
             })
         }
     }
 
     //we init service to check if the user is loggedin or // NOTE:
     new ServiceAccount().checkState();
-
 
     app = $scope; //angular scope
     app.email = "";
