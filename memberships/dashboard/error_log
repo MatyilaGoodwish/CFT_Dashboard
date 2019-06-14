@@ -1,0 +1,82 @@
+[08-Jun-2019 14:28:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function main() in /home/cftzafro/public_html/memberships/dashboard/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/cftzafro/public_html/memberships/dashboard/index.php on line 12
+[08-Jun-2019 14:28:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function main() in /home/cftzafro/public_html/memberships/dashboard/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/cftzafro/public_html/memberships/dashboard/index.php on line 12
+[09-Jun-2019 15:35:08 UTC] PHP Fatal error:  Uncaught Error: Class 'Business\Modeles\Business' not found in /home/cftzafro/public_html/memberships/dashboard/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/cftzafro/public_html/memberships/dashboard/index.php on line 13
+[09-Jun-2019 15:35:10 UTC] PHP Fatal error:  Uncaught Error: Class 'Business\Modeles\Business' not found in /home/cftzafro/public_html/memberships/dashboard/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/cftzafro/public_html/memberships/dashboard/index.php on line 13
+[09-Jun-2019 15:35:44 UTC] PHP Fatal error:  Uncaught Error: Class 'Business\Modeles\Business' not found in /home/cftzafro/public_html/memberships/dashboard/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/cftzafro/public_html/memberships/dashboard/index.php on line 13
+[09-Jun-2019 15:35:46 UTC] PHP Fatal error:  Uncaught Error: Class 'Business\Modeles\Business' not found in /home/cftzafro/public_html/memberships/dashboard/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/cftzafro/public_html/memberships/dashboard/index.php on line 13
+[09-Jun-2019 15:35:47 UTC] PHP Fatal error:  Uncaught Error: Class 'Business\Modeles\Business' not found in /home/cftzafro/public_html/memberships/dashboard/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/cftzafro/public_html/memberships/dashboard/index.php on line 13
+[09-Jun-2019 15:36:21 UTC] PHP Fatal error:  Uncaught Error: Class 'Business\Modeles\Business' not found in /home/cftzafro/public_html/memberships/dashboard/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/cftzafro/public_html/memberships/dashboard/index.php on line 12
+[09-Jun-2019 15:36:22 UTC] PHP Fatal error:  Uncaught Error: Class 'Business\Modeles\Business' not found in /home/cftzafro/public_html/memberships/dashboard/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/cftzafro/public_html/memberships/dashboard/index.php on line 12
+[09-Jun-2019 15:36:22 UTC] PHP Fatal error:  Uncaught Error: Class 'Business\Modeles\Business' not found in /home/cftzafro/public_html/memberships/dashboard/index.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/cftzafro/public_html/memberships/dashboard/index.php on line 12
+[09-Jun-2019 15:42:29 UTC] PHP Parse error:  syntax error, unexpected 'e' (T_STRING), expecting variable (T_VARIABLE) in /home/cftzafro/public_html/memberships/dashboard/index.php on line 9
+[09-Jun-2019 15:42:31 UTC] PHP Parse error:  syntax error, unexpected 'e' (T_STRING), expecting variable (T_VARIABLE) in /home/cftzafro/public_html/memberships/dashboard/index.php on line 9
+[09-Jun-2019 15:48:45 UTC] PHP Parse error:  syntax error, unexpected '$', expecting '(' in /home/cftzafro/public_html/memberships/dashboard/index.php on line 9
+[09-Jun-2019 15:50:27 UTC] PHP Parse error:  syntax error, unexpected '$', expecting '(' in /home/cftzafro/public_html/memberships/dashboard/index.php on line 9
+[09-Jun-2019 15:50:29 UTC] PHP Parse error:  syntax error, unexpected '$', expecting '(' in /home/cftzafro/public_html/memberships/dashboard/index.php on line 9
+[09-Jun-2019 15:51:24 UTC] PHP Parse error:  syntax error, unexpected '$', expecting '(' in /home/cftzafro/public_html/memberships/dashboard/index.php on line 9
+[09-Jun-2019 15:52:28 UTC] PHP Parse error:  syntax error, unexpected '$', expecting '(' in /home/cftzafro/public_html/memberships/dashboard/index.php on line 9
+[09-Jun-2019 15:52:39 UTC] PHP Parse error:  syntax error, unexpected '$', expecting '(' in /home/cftzafro/public_html/memberships/dashboard/index.php on line 9
+[09-Jun-2019 15:52:41 UTC] PHP Parse error:  syntax error, unexpected '$', expecting '(' in /home/cftzafro/public_html/memberships/dashboard/index.php on line 9
+[09-Jun-2019 15:52:42 UTC] PHP Parse error:  syntax error, unexpected '$', expecting '(' in /home/cftzafro/public_html/memberships/dashboard/index.php on line 9
+[09-Jun-2019 15:52:42 UTC] PHP Parse error:  syntax error, unexpected '$', expecting '(' in /home/cftzafro/public_html/memberships/dashboard/index.php on line 9
+[09-Jun-2019 15:52:42 UTC] PHP Parse error:  syntax error, unexpected '$', expecting '(' in /home/cftzafro/public_html/memberships/dashboard/index.php on line 9
+[09-Jun-2019 15:52:42 UTC] PHP Parse error:  syntax error, unexpected '$', expecting '(' in /home/cftzafro/public_html/memberships/dashboard/index.php on line 9
+[09-Jun-2019 15:52:43 UTC] PHP Parse error:  syntax error, unexpected '$', expecting '(' in /home/cftzafro/public_html/memberships/dashboard/index.php on line 9
+[09-Jun-2019 15:53:11 UTC] PHP Parse error:  syntax error, unexpected '$', expecting '(' in /home/cftzafro/public_html/memberships/dashboard/index.php on line 9
+[09-Jun-2019 15:53:13 UTC] PHP Parse error:  syntax error, unexpected '$', expecting '(' in /home/cftzafro/public_html/memberships/dashboard/index.php on line 9
+[09-Jun-2019 15:53:14 UTC] PHP Parse error:  syntax error, unexpected '$', expecting '(' in /home/cftzafro/public_html/memberships/dashboard/index.php on line 9
+[09-Jun-2019 15:53:14 UTC] PHP Parse error:  syntax error, unexpected '$', expecting '(' in /home/cftzafro/public_html/memberships/dashboard/index.php on line 9
+[09-Jun-2019 15:53:25 UTC] PHP Parse error:  syntax error, unexpected '$', expecting '(' in /home/cftzafro/public_html/memberships/dashboard/index.php on line 9
+[09-Jun-2019 15:53:27 UTC] PHP Parse error:  syntax error, unexpected '$', expecting '(' in /home/cftzafro/public_html/memberships/dashboard/index.php on line 9
+[09-Jun-2019 16:34:11 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/cftzafro/public_html/memberships/dashboard/index.php on line 8
+[09-Jun-2019 16:34:13 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/cftzafro/public_html/memberships/dashboard/index.php on line 8
+[09-Jun-2019 16:41:28 UTC] PHP Warning:  require_once(meekro.class.php): failed to open stream: No such file or directory in /home/cftzafro/public_html/memberships/dashboard/index.php on line 3
+[09-Jun-2019 16:41:28 UTC] PHP Fatal error:  require_once(): Failed opening required 'meekro.class.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/cftzafro/public_html/memberships/dashboard/index.php on line 3
+[09-Jun-2019 16:41:29 UTC] PHP Warning:  require_once(meekro.class.php): failed to open stream: No such file or directory in /home/cftzafro/public_html/memberships/dashboard/index.php on line 3
+[09-Jun-2019 16:41:29 UTC] PHP Fatal error:  require_once(): Failed opening required 'meekro.class.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/cftzafro/public_html/memberships/dashboard/index.php on line 3
+[09-Jun-2019 16:41:53 UTC] PHP Warning:  require_once(meekro.class.php): failed to open stream: No such file or directory in /home/cftzafro/public_html/memberships/dashboard/index.php on line 3
+[09-Jun-2019 16:41:53 UTC] PHP Fatal error:  require_once(): Failed opening required 'meekro.class.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/cftzafro/public_html/memberships/dashboard/index.php on line 3
+[09-Jun-2019 16:41:54 UTC] PHP Warning:  require_once(meekro.class.php): failed to open stream: No such file or directory in /home/cftzafro/public_html/memberships/dashboard/index.php on line 3
+[09-Jun-2019 16:41:54 UTC] PHP Fatal error:  require_once(): Failed opening required 'meekro.class.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/cftzafro/public_html/memberships/dashboard/index.php on line 3
+[09-Jun-2019 16:41:55 UTC] PHP Warning:  require_once(meekro.class.php): failed to open stream: No such file or directory in /home/cftzafro/public_html/memberships/dashboard/index.php on line 3
+[09-Jun-2019 16:41:55 UTC] PHP Fatal error:  require_once(): Failed opening required 'meekro.class.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/cftzafro/public_html/memberships/dashboard/index.php on line 3
+[09-Jun-2019 16:41:56 UTC] PHP Warning:  require_once(meekro.class.php): failed to open stream: No such file or directory in /home/cftzafro/public_html/memberships/dashboard/index.php on line 3
+[09-Jun-2019 16:41:56 UTC] PHP Fatal error:  require_once(): Failed opening required 'meekro.class.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/cftzafro/public_html/memberships/dashboard/index.php on line 3
+[09-Jun-2019 16:41:56 UTC] PHP Warning:  require_once(meekro.class.php): failed to open stream: No such file or directory in /home/cftzafro/public_html/memberships/dashboard/index.php on line 3
+[09-Jun-2019 16:41:56 UTC] PHP Fatal error:  require_once(): Failed opening required 'meekro.class.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/cftzafro/public_html/memberships/dashboard/index.php on line 3
+[09-Jun-2019 16:41:56 UTC] PHP Warning:  require_once(meekro.class.php): failed to open stream: No such file or directory in /home/cftzafro/public_html/memberships/dashboard/index.php on line 3
+[09-Jun-2019 16:41:56 UTC] PHP Fatal error:  require_once(): Failed opening required 'meekro.class.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/cftzafro/public_html/memberships/dashboard/index.php on line 3
+[09-Jun-2019 16:42:45 UTC] PHP Warning:  require_once(meekro.class.php): failed to open stream: No such file or directory in /home/cftzafro/public_html/memberships/dashboard/index.php on line 3
+[09-Jun-2019 16:42:45 UTC] PHP Fatal error:  require_once(): Failed opening required 'meekro.class.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/cftzafro/public_html/memberships/dashboard/index.php on line 3
+[09-Jun-2019 16:43:26 UTC] PHP Warning:  require_once(meekro.class.php): failed to open stream: No such file or directory in /home/cftzafro/public_html/memberships/dashboard/index.php on line 3
+[09-Jun-2019 16:43:26 UTC] PHP Fatal error:  require_once(): Failed opening required 'meekro.class.php' (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home/cftzafro/public_html/memberships/dashboard/index.php on line 3
